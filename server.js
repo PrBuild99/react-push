@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
+const passport = require("passport");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
@@ -18,6 +18,10 @@ mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Mongo Connected"))
   .catch(() => console.log(error));
+app.use(passport.initialize());
+
+// Passport Config
+require("./config/passport")(passport);
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
