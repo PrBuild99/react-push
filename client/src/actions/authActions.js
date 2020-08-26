@@ -1,11 +1,7 @@
+import axios from "axios";
 import { GET_ERRORS } from "./types";
 
-const initialState = {
-  isAuthenticated: false,
-  user: {},
-};
-import axios from "axios";
-export const registerUser = (userData) => (dispatch) => {
+export const registerUser = (userData, history) => (dispatch) => {
   axios
     .post("/api/users/register", userData)
     .then((res) => history.push("/login"))
