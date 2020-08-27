@@ -7,6 +7,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import AdSense from "react-adsense";
 import "./App.css";
 
 class App extends Component {
@@ -17,6 +18,12 @@ class App extends Component {
           <div className="App">
             <NavBar />
             <Route exact path="/" component={Landing} />
+            <div className="App">
+              <AdSense.Google
+                client="ca-pub-2289477760922990"
+                slot="6118822961"
+              />
+            </div>
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
