@@ -19,7 +19,6 @@ class CreateProfile extends Component {
       location: "",
       status: "",
       skills: "",
-      githubusername: "",
       bio: "",
       twitter: "",
       facebook: "",
@@ -49,7 +48,6 @@ class CreateProfile extends Component {
       location: this.state.location,
       status: this.state.status,
       skills: this.state.skills,
-      githubusername: this.state.githubusername,
       bio: this.state.bio,
       twitter: this.state.twitter,
       facebook: this.state.facebook,
@@ -123,14 +121,12 @@ class CreateProfile extends Component {
 
     // Select options for status
     const options = [
-      { label: "* Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Manager", value: "Manager" },
-      { label: "Student or Learning", value: "Student or Learning" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
-      { label: "Intern", value: "Intern" },
+      { label: "* Select your status", value: 0 },
+      { label: "Student", value: "Student" },
+      { label: "Teaching Associate", value: "Teaching Associate" },
+      { label: "Assistant Professor", value: "Assistant Professor" },
+      { label: "Professor", value: "Professor" },
+      { label: "Visiting Faculty", value: "Visiting Faculty" },
       { label: "Other", value: "Other" },
     ];
 
@@ -168,7 +164,7 @@ class CreateProfile extends Component {
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Could be your own company or one you work for"
+                  info="Give us your department name"
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -184,7 +180,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  info="City or city & state suggested (eg. Bengaluru,Karnataka)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
@@ -195,14 +191,7 @@ class CreateProfile extends Component {
                   info="Please use comma separated values (eg.
                     HTML,CSS,JavaScript,PHP"
                 />
-                <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
-                />
+
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"

@@ -20,14 +20,15 @@ img {
 }
 .cd {
   background-color: #00b5ac;
-}
-.footer {
-  background-color: #00b5ac;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  color: black;
   text-align: center;
+}
+.footer {
+  background-color: #00b5ac;
 }
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.7);
